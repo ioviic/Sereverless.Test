@@ -1,6 +1,7 @@
 service: notes-app-api
 
 # Create an optimized package for our functions
+# By setting individually: true, we are telling Serverless Framework to create a single package per Lambda function.
 package:
   individually: true
 
