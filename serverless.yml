@@ -64,3 +64,17 @@ functions:
           method: get
           cors: true
           authorizer: aws_iam
+
+  list:
+    # Defines an HTTP API endpoint that calls the main function in list.js
+    # - path: url path is /notes
+    # - method: GET request
+    # - cors: enabled CORS (Cross-Origin Resource Sharing) for browser cross domain api call
+    # - authorizer: authenticate using the AWS IAM role
+    handler: list.main
+    events:
+      - http:
+          path: notes
+          method: get
+          cors: true
+          authorizer: aws_iam
