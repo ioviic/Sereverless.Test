@@ -1,0 +1,26 @@
+{
+  "name": "sereverless.test",
+  "version": "1.0.0",
+  "description": "A Node.js starter for the Serverless Framework with async/await and unit test support",
+  "main": "handler.js",
+  "scripts": {
+    "test": "serverless-bundle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://ioviic@github.com/ioviic/Sereverless.Test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ioviic/Sereverless.Test/issues"
+  },
+  "homepage": "https://github.com/ioviic/Sereverless.Test#readme",
+  "devDependencies": {
+    "aws-sdk": "^2.656.0",
+    "serverless-bundle": "^1.4.0",
+    "serverless-dotenv-plugin": "^2.3.2",
+    "serverless-offline": "^6.1.4",
+    "uuid": "^7.0.3"
+  }
+}
