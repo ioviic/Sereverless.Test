@@ -1,4 +1,4 @@
-service: notes-app-api
+service: serverless-dev-app-api
 
 # Create an optimized package for our functions
 # By setting individually: true, we are telling Serverless Framework to create a single package per Lambda function.
@@ -13,7 +13,7 @@ plugins:
 provider:
   name: aws
   runtime: nodejs12.x
-  stage: prod
+  stage: dev
   region: eu-central-1
 
   # These environment variables are made available to our functions
@@ -34,7 +34,7 @@ provider:
         - dynamodb:PutItem
         - dynamodb:UpdateItem
         - dynamodb:DeleteItem
-      Resource: "arn:aws:dynamodb:us-east-1:*:*"
+      Resource: "arn:aws:dynamodb:eu-central-1:635794945247:table/serverless-test"
 
 functions:
 
