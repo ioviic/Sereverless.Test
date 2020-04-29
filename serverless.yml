@@ -140,6 +140,6 @@ resources:
   - ${file(resources/dynamodb-table.yml)}
   # S3
   - ${file(resources/s3-bucket.yml)}
-  # Cognito
+  # Cognito user pool and identity pool
   - ${file(resources/cognito-user-pool.yml)}
   - ${file(resources/cognito-identity-pool.yml)}
