@@ -1,13 +1,18 @@
+import * as debug from "./debug-lib";
+
 export default function handler(lambda) {
   return function (event, context) {
     return Promise.resolve()
-    // Run the Lambda
+      // Start debugger
+      .then(() => debug.init(event, context))
+      // Run the Lambda
       .then(() => lambda(event, context))
       // On success
       .then((responseBody) => [200, responseBody])
       // On failure
       .catch((e) => {
-        console.log(e);
+        // Print debug messages
+        debug.flush(e);
         return [500, { error: e.message }];
       })
       // Return HTTP response
@@ -18,6 +23,8 @@ export default function handler(lambda) {
           "Access-Control-Allow-Credentials": true,
         },
         body: JSON.stringify(body),
-      }));
+      }))
+      // Cleanup debugger
+      .finally(debug.end);
   };
 }
